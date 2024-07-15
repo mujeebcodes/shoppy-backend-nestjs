@@ -9,4 +9,8 @@ export class ProductsService {
   async createProduct(data: CreateProductRequest, userId: number) {
     return this.prismaService.product.create({ data: { ...data, userId } });
   }
+
+  async getProducts() {
+    return this.prismaService.product.findMany();
+  }
 }
