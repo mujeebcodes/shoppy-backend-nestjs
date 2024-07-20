@@ -3,9 +3,10 @@ import { ProductsController } from './products.controller';
 import { ProductsService } from './products.service';
 import { PrismaModule } from '../prisma/prisma.module';
 import { ProductsGateway } from './product.gateway';
+import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
-  imports: [PrismaModule],
+  imports: [PrismaModule, AuthModule],
   controllers: [ProductsController],
   providers: [ProductsService, ProductsGateway],
   exports: [ProductsService],
